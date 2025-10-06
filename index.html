@@ -27,26 +27,61 @@
             background: #9ca3af;
             border-radius: 50%;
         }
+        
+        /* Auto-scrolling logo animation */
+        .logo-scroll-container {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .logo-scroll {
+            display: flex;
+            animation: scroll 40s linear infinite;
+        }
+        
+        .logo-scroll-container:hover .logo-scroll {
+            animation-play-state: paused;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Hide scrollbar for modal */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+        }
+        
+        .hide-scrollbar {
+            -ms-overflow-style: none;  /* For IE and Edge */
+            scrollbar-width: none;  /* For Firefox */
+        }
     </style>
 
     <!-- Navigation -->
     <nav class="bg-white shadow-lg fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex justify-between items-center h-16 sm:h-20">
                 <div class="flex items-center">
-                    <img src="assects/etc-logo.svg" alt="ETC Logo" class="h-12 w-auto">
+                    <img src="assects/etc-logo.svg" alt="ETC Logo" class="h-8 sm:h-12 w-auto">
                 </div>
                 <div class="flex items-center">
-                    <a href="#contact" class="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg">
+                    <button onclick="openContactModal()" class="bg-orange-600 text-white px-4 sm:px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-sm sm:text-base">
                         Get Quote
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-24 pb-12 px-4 bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden">
+    <section class="pt-20 sm:pt-24 pb-8 sm:pb-12 px-4 bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden">
         <!-- Circuit board pattern background -->
         <div class="absolute inset-0 pointer-events-none">
             <!-- Right side circuit traces -->
@@ -73,26 +108,45 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="relative z-10">
-                    <h2 class="text-5xl font-bold text-gray-900 mb-4 leading-tight">Electrical Testing for Homes & Industries Maximize Safety, Performance & Compliance</h2>
-                    <p class="text-base text-gray-600 mb-6 leading-relaxed">Prevent System Failures, Enhance Reliability, and Ensure Regulatory Compliance with Professional Electrical Testing Services</p>
-                    <div class="flex flex-wrap gap-4 mb-8">
-                        <a href="#services" class="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition shadow-lg">View Our Services</a>
-                        <a href="#contact" class="border-2 border-orange-600 text-orange-600 px-6 py-2 rounded-full font-semibold hover:bg-orange-50 transition">Let's Connect</a>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">Electrical Testing for Homes & Industries Maximize Safety, Performance & Compliance</h2>
+                    <p class="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">Maximize Safety, Performance & Compliance with Professional Electrical Testing Services</p>
+                    
+                    <!-- Key Benefits Bullet Points -->
+                    <div class="mb-6 sm:mb-8">
+                        <ul class="space-y-2 sm:space-y-3">
+                            <li class="flex items-center text-sm sm:text-base text-gray-700">
+                                <i class="fas fa-shield-alt text-orange-500 mr-2 sm:mr-3 flex-shrink-0"></i>
+                                <span>Safe & reliable solutions</span>
+                            </li>
+                            <li class="flex items-center text-sm sm:text-base text-gray-700">
+                                <i class="fas fa-tools text-orange-500 mr-2 sm:mr-3 flex-shrink-0"></i>
+                                <span>Expert testing & maintenance</span>
+                            </li>
+                            <li class="flex items-center text-sm sm:text-base text-gray-700">
+                                <i class="fas fa-clock text-orange-500 mr-2 sm:mr-3 flex-shrink-0"></i>
+                                <span>Minimal downtime, max efficiency</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
+                        <a href="#services" class="bg-orange-600 text-white px-5 sm:px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition shadow-lg text-sm sm:text-base text-center">View Our Services</a>
+                        <button onclick="openContactModal()" class="border-2 border-orange-600 text-orange-600 px-5 sm:px-6 py-2 rounded-full font-semibold hover:bg-orange-50 transition text-sm sm:text-base text-center cursor-pointer">Let's Connect</button>
                     </div>
                     
                     <!-- Statistics -->
-                    <div class="grid grid-cols-3 gap-6">
+                    <div class="grid grid-cols-3 gap-3 sm:gap-6">
                         <div>
-                            <div class="text-3xl md:text-4xl font-bold text-gray-900 mb-1" id="years-experience">0+</div>
-                            <div class="text-sm text-gray-600">Years Experience</div>
+                            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1" id="years-experience">0+</div>
+                            <div class="text-xs sm:text-sm text-gray-600">Years Experience</div>
                         </div>
                         <div>
-                            <div class="text-3xl md:text-4xl font-bold text-gray-900 mb-1" id="projects-completed">0+</div>
-                            <div class="text-sm text-gray-600">Projects Completed</div>
+                            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1" id="projects-completed">0+</div>
+                            <div class="text-xs sm:text-sm text-gray-600">Projects Completed</div>
                         </div>
                         <div>
-                            <div class="text-3xl md:text-4xl font-bold text-gray-900 mb-1" id="happy-clients">0+</div>
-                            <div class="text-sm text-gray-600">Happy Clients</div>
+                            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1" id="happy-clients">0+</div>
+                            <div class="text-xs sm:text-sm text-gray-600">Happy Clients</div>
                         </div>
                     </div>
                 </div>
@@ -115,13 +169,13 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-12 sm:py-16 md:py-20 px-4 bg-white">
+    <section id="services" class="py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
       
             <!-- Visual Card - Left Side -->
             <div class="flex items-center justify-center order-2 lg:order-1">
-              <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-[30px] bg-gradient-to-b from-indigo-300 to-white p-6 sm:p-8 lg:p-12">
+              <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-[30px] bg-gradient-to-b from-indigo-100 to-white p-6 sm:p-8 lg:p-12">
                 <div class="space-y-4 sm:space-y-5">
                   <!-- Electrical Maintenance Image Card -->
                   <div class="rounded-3xl bg-white ">
@@ -140,15 +194,15 @@
             </div>
       
             <!-- Text Content - Right Side -->
-            <div class="flex flex-col justify-center order-1 lg:order-2 text-center lg:text-left">
+            <div class="flex flex-col justify-center order-1 lg:order-2 text-center lg:text-left px-4 lg:px-8">
               
-              <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+              <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                 Electrical Maintenance Services
               </h2>
-              <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+              <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 Electrical Maintenance Services of Generators, Transformers, Motors, Batteries and other Electrical equipment’s and systems.
               </p>
-              <a href="#contact" class="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition w-max mx-auto lg:mx-0">
+              <a href="https://electricaltestingandcommissioning.com/services/" class="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition w-max mx-auto lg:mx-0">
                 Learn More <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -158,27 +212,27 @@
     </section>
 
     <!-- Services Section 2 -->
-    <section id="services2" class="py-8 sm:py-10 md:py-12 px-4 bg-gray-50">
+    <section id="services2" class="py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-8 lg:px-12 bg-gray-50">
         <div class="max-w-7xl mx-auto">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
       
             <!-- Text Content - Left Side -->
-            <div class="flex flex-col justify-center order-1 lg:order-1 text-center lg:text-left">
+            <div class="flex flex-col justify-center order-1 lg:order-1 text-center lg:text-left px-4 lg:px-8">
               
-              <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+              <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                 Switch Yard Maintenance
               </h2>
-              <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+              <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 Specialized in the maintenance, inspection, and testing of switchyards to ensure safe and reliable power distribution.
               </p>
-              <a href="#contact" class="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition w-max mx-auto lg:mx-0">
+              <a href="https://electricaltestingandcommissioning.com/services/" class="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition w-max mx-auto lg:mx-0">
                 Learn More <i class="fas fa-arrow-right"></i>
               </a>
             </div>
-      
+
             <!-- Visual Card - Right Side -->
             <div class="flex items-center justify-center order-2 lg:order-2">
-               <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-[30px] bg-gradient-to-b from-orange-300 to-white p-6 sm:p-8 lg:p-12">
+               <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-[30px] bg-gradient-to-b from-orange-100 to-white p-6 sm:p-8 lg:p-12">
                 <div class="space-y-4 sm:space-y-5">
                   <!-- Testing Equipment Image Card -->
                   <div class="rounded-3xl bg-white ">
@@ -194,20 +248,20 @@
 
                 </div>
               </div>
-            </div>
-      
+                        </div>
+
           </div>
         </div>
     </section>
 
     <!-- HT/LT Line Maintenance Section -->
-    <section id="ht-lt-maintenance" class="py-8 sm:py-10 md:py-12 px-4 bg-white">
+    <section id="ht-lt-maintenance" class="py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
       
             <!-- Visual Card - Left Side -->
             <div class="flex items-center justify-center order-2 lg:order-1">
-              <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-[30px] bg-gradient-to-b from-green-300 to-white p-6 sm:p-8 lg:p-12">
+              <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-[30px] bg-gradient-to-b from-green-100 to-white p-6 sm:p-8 lg:p-12">
                 <div class="space-y-4 sm:space-y-5">
                   <!-- HT/LT Line Maintenance Image Card -->
                   <div class="rounded-3xl bg-white ">
@@ -224,47 +278,47 @@
                 </div>
               </div>
             </div>
-      
+
             <!-- Text Content - Right Side -->
-            <div class="flex flex-col justify-center order-1 lg:order-2 text-center lg:text-left">
+            <div class="flex flex-col justify-center order-1 lg:order-2 text-center lg:text-left px-4 lg:px-8">
               
-              <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+              <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                 HT/LT Line Maintenance
               </h2>
-              <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+              <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 Professional maintenance services for High Tension and Low Tension electrical lines ensuring reliable power transmission and distribution systems.
               </p>
-              <a href="#contact" class="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition w-max mx-auto lg:mx-0">
+              <a href="https://electricaltestingandcommissioning.com/services/" class="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition w-max mx-auto lg:mx-0">
                 Learn More <i class="fas fa-arrow-right"></i>
               </a>
             </div>
-      
+
           </div>
         </div>
     </section>
 
     <!-- Lighting & Lightning Protection Section -->
-    <section id="lighting-protection" class="py-8 sm:py-10 md:py-12 px-4 bg-gray-50">
+    <section id="lighting-protection" class="py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-8 lg:px-12 bg-gray-50">
         <div class="max-w-7xl mx-auto">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
       
             <!-- Text Content - Left Side -->
-            <div class="flex flex-col justify-center order-1 lg:order-1 text-center lg:text-left">
+            <div class="flex flex-col justify-center order-1 lg:order-1 text-center lg:text-left px-4 lg:px-8">
               
-              <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+              <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                 Lighting & Lightning Protection System
               </h2>
-              <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+              <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 Comprehensive lighting system installation and lightning protection solutions to safeguard your electrical infrastructure from power surges and electrical storms.
               </p>
-              <a href="#contact" class="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition w-max mx-auto lg:mx-0">
+              <a href="https://electricaltestingandcommissioning.com/services/" class="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition w-max mx-auto lg:mx-0">
                 Learn More <i class="fas fa-arrow-right"></i>
               </a>
             </div>
-      
+
             <!-- Visual Card - Right Side -->
             <div class="flex items-center justify-center order-2 lg:order-2">
-              <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-[30px] bg-gradient-to-b from-blue-300 to-white p-6 sm:p-8 lg:p-12">
+              <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-[30px] bg-gradient-to-b from-blue-100 to-white p-6 sm:p-8 lg:p-12">
                 <div class="space-y-4 sm:space-y-5">
                   <!-- Lighting Protection Image Card -->
                   <div class="rounded-3xl bg-white ">
@@ -281,19 +335,19 @@
                 </div>
               </div>
             </div>
-      
+
           </div>
         </div>
     </section>
 
     <!-- Township Electrical Maintenance Section -->
-    <section id="township-maintenance" class="py-8 sm:py-10 md:py-12 px-4 bg-white">
+    <section id="township-maintenance" class="py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
       
             <!-- Visual Card - Left Side -->
             <div class="flex items-center justify-center order-2 lg:order-1">
-              <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-[30px] bg-gradient-to-b from-purple-300 to-white p-6 sm:p-8 lg:p-12">
+              <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-[30px] bg-gradient-to-b from-purple-100 to-white p-6 sm:p-8 lg:p-12">
                 <div class="space-y-4 sm:space-y-5">
                   <!-- Township Electrical Maintenance Image Card -->
                   <div class="rounded-3xl bg-white ">
@@ -305,22 +359,22 @@
                         <div class="text-xs opacity-90">Community electrical services</div>
                       </div>
                     </div>
-                  </div>
+                        </div>
 
                 </div>
               </div>
             </div>
       
             <!-- Text Content - Right Side -->
-            <div class="flex flex-col justify-center order-1 lg:order-2 text-center lg:text-left">
+            <div class="flex flex-col justify-center order-1 lg:order-2 text-center lg:text-left px-4 lg:px-8">
               
-              <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+              <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                 Township Electrical Maintenance
               </h2>
-              <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+              <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 Complete electrical maintenance solutions for residential townships, ensuring reliable power supply and safety for community infrastructure.
               </p>
-              <a href="#contact" class="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition w-max mx-auto lg:mx-0">
+              <a href="https://electricaltestingandcommissioning.com/services/" class="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition w-max mx-auto lg:mx-0">
                 Learn More <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -330,27 +384,27 @@
     </section>
 
     <!-- Annual & Capital Overhauling Section -->
-    <section id="overhauling-services" class="py-8 sm:py-10 md:py-12 px-4 bg-gray-50">
+    <section id="overhauling-services" class="py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-8 lg:px-12 bg-gray-50">
         <div class="max-w-7xl mx-auto">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
       
             <!-- Text Content - Left Side -->
-            <div class="flex flex-col justify-center order-1 lg:order-1 text-center lg:text-left">
+            <div class="flex flex-col justify-center order-1 lg:order-1 text-center lg:text-left px-4 lg:px-8">
               
-              <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+              <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                 Annual & Capital Overhauling
               </h2>
-              <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+              <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 Comprehensive annual maintenance and capital overhauling services for electrical systems and equipment to maximize performance and extend operational life.
               </p>
-              <a href="#contact" class="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition w-max mx-auto lg:mx-0">
+              <a href="https://electricaltestingandcommissioning.com/services/" class="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition w-max mx-auto lg:mx-0">
                 Learn More <i class="fas fa-arrow-right"></i>
               </a>
-            </div>
-      
+                        </div>
+
             <!-- Visual Card - Right Side -->
             <div class="flex items-center justify-center order-2 lg:order-2">
-              <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-[30px] bg-gradient-to-b from-red-300 to-white p-6 sm:p-8 lg:p-12">
+              <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-[30px] bg-gradient-to-b from-red-100 to-white p-6 sm:p-8 lg:p-12">
                 <div class="space-y-4 sm:space-y-5">
                   <!-- Overhauling Services Image Card -->
                   <div class="rounded-3xl bg-white ">
@@ -365,108 +419,191 @@
                   </div>
 
                 </div>
-              </div>
-            </div>
-      
-          </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section id="about" class="py-20 px-4 bg-gray-100">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Choose Us?</h2>
-                <p class="text-xl text-gray-600">Your trusted partner for all electrical maintenance needs</p>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="bg-orange-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users text-white text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Experienced Team</h3>
-                    <p class="text-gray-600">Highly skilled and certified professionals</p>
-                        </div>
-
-                <div class="text-center">
-                    <div class="bg-orange-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-star text-white text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Quality Service</h3>
-                    <p class="text-gray-600">Commitment to excellence in every project</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="bg-orange-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-headset text-white text-3xl"></i>
-                        </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">24/7 Support</h3>
-                    <p class="text-gray-600">Round-the-clock customer assistance</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="bg-orange-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-hand-holding-usd text-white text-3xl"></i>
-                        </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Competitive Pricing</h3>
-                    <p class="text-gray-600">Best value for your investment</p>
-                </div>
             </div>
         </div>
     </section>
+
+    
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 bg-gradient-to-br from-orange-600 to-orange-800 text-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-            <p class="text-xl text-orange-100 mb-8">Contact us today for professional electrical maintenance services</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="tel:+1234567890" class="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition inline-flex items-center justify-center">
-                    <i class="fas fa-phone mr-2"></i> Call Us Now
-                </a>
-                <a href="mailto:info@electricalmaintenance.com" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition inline-flex items-center justify-center">
-                    <i class="fas fa-envelope mr-2"></i> Email Us
-                </a>
+    <section id="contact" class="py-8 sm:py-10 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative">
+        <!-- Subtle background pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 25% 25%, #f97316 0%, transparent 50%), radial-gradient(circle at 75% 75%, #ea580c 0%, transparent 50%);"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="text-center mb-6 sm:mb-8">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3">Ready to Power Your Success?</h2>
+                <p class="text-sm sm:text-base text-gray-300 max-w-xl mx-auto">Get professional electrical solutions with instant support and competitive pricing.</p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                <button onclick="openContactModal()" class="group bg-orange-600 text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-orange-700 hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center text-xs sm:text-base cursor-pointer">
+                    <i class="fas fa-phone mr-1 sm:mr-2 group-hover:scale-110 transition-transform"></i>
+                    <span>Call Now</span>
+                </button>
+                
+                <button onclick="openContactModal()" class="group bg-white text-gray-900 px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-gray-100 hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center text-xs sm:text-base cursor-pointer">
+                    <i class="fas fa-envelope mr-1 sm:mr-2 group-hover:scale-110 transition-transform"></i>
+                    <span>Get Quote</span>
+                </button>
+            </div>
+
+            <!-- Compact trust indicators -->
+            <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-400">
+                <div class="flex items-center">
+                    <i class="fas fa-clock mr-1 sm:mr-2 text-orange-500"></i>
+                    <span>24/7 Available</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-shield-alt mr-1 sm:mr-2 text-orange-500"></i>
+                    <span>Licensed & Insured</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-star mr-1 sm:mr-2 text-orange-500"></i>
+                    <span>5-Star Rated</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
+    <!-- Contact Form Popup Modal -->
+    <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-xl max-w-md w-full max-h-[90vh] overflow-y-auto hide-scrollbar">
+                <!-- Modal Header -->
+                <div class="flex items-center justify-between p-4 border-b">
+                    <h3 class="text-lg font-bold text-gray-900">Get Your Free Quote</h3>
+                    <button id="closeModal" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <i class="fas fa-times text-lg"></i>
+                    </button>
+                </div>
+                
+                <!-- Modal Body -->
+                <form id="contactForm" class="p-4 space-y-3">
                 <div>
-                    <div class="flex items-center mb-4">
-                        <h3 class="text-3xl font-bold text-orange-600 mr-2">ETC</h3>
+                        <label for="popupName" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                        <input type="text" id="popupName" name="name" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                               placeholder="Your Name">
                     </div>
-                    <p class="text-gray-400">Your trusted partner for comprehensive electrical testing and maintenance solutions.</p>
+                    
+                    <div>
+                        <label for="popupEmail" class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                        <input type="email" id="popupEmail" name="email" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                               placeholder="your@email.com">
                         </div>
+                    
                         <div>
-                    <h4 class="text-lg font-bold mb-4">Our Services</h4>
-                    <ul class="text-gray-400 space-y-2">
-                        <li>Equipment Maintenance</li>
-                        <li>Switch Yard Services</li>
-                        <li>HT & LT Line Maintenance</li>
-                        <li>Lightning Protection</li>
-                    </ul>
+                        <label for="popupPhone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                        <input type="tel" id="popupPhone" name="phone" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                               placeholder="+1 (555) 123-4567">
                 </div>
+                    
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
-                    <ul class="text-gray-400 space-y-2">
-                        <li><i class="fas fa-phone mr-2"></i> +1 234 567 890</li>
-                        <li><i class="fas fa-envelope mr-2"></i> info@electricalmaintenance.com</li>
-                        <li><i class="fas fa-map-marker-alt mr-2"></i> Your Location</li>
-                    </ul>
+                        <label for="popupService" class="block text-sm font-medium text-gray-700 mb-1">Service Needed</label>
+                        <select id="popupService" name="service" 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                            <option value="">Select a service</option>
+                            <option value="maintenance">Electrical Maintenance</option>
+                            <option value="switchyard">Switch Yard Services</option>
+                            <option value="ht-lt">HT/LT Line Maintenance</option>
+                            <option value="lightning">Lightning Protection</option>
+                            <option value="township">Township Electrical</option>
+                            <option value="overhauling">Annual Overhauling</option>
+                            <option value="testing">Testing & Commissioning</option>
+                            <option value="other">Other</option>
+                        </select>
                 </div>
-                        </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 ETC - Electrical Testing & Commissioning. All rights reserved.</p>
+                    
+                    <div>
+                        <label for="popupMessage" class="block text-sm font-medium text-gray-700 mb-1">Project Details</label>
+                        <textarea id="popupMessage" name="message" rows="2" 
+                                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
+                                  placeholder="Tell us about your project requirements..."></textarea>
+                    </div>
+                    
+                    <button type="submit" 
+                            class="w-full bg-orange-600 text-white py-2.5 rounded-lg font-semibold hover:bg-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <i class="fas fa-paper-plane mr-2"></i>Get Free Quote
+                    </button>
+                </form>
             </div>
         </div>
-    </footer>
+    </div>
 
     <script>
+        // Modal functionality
+        function openContactModal() {
+            document.getElementById('contactModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeContactModal();
+            }
+        });
+
+        // Close modal button
+        document.getElementById('closeModal').addEventListener('click', closeContactModal);
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeContactModal();
+            }
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                service: formData.get('service'),
+                message: formData.get('message')
+            };
+
+            // Simple form validation
+            if (!data.name || !data.phone || !data.email) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // Create mailto link with form data
+            const subject = `Quote Request - ${data.service || 'General Inquiry'}`;
+            const body = `Name: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email}\nService: ${data.service || 'Not specified'}\n\nProject Details:\n${data.message || 'No additional details provided'}`;
+            
+            const mailtoLink = `mailto:info@electricalmaintenance.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Thank you for your inquiry! Your email client will open with the details. We\'ll get back to you within 24 hours.');
+            
+            // Close modal and reset form
+            closeContactModal();
+            this.reset();
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
