@@ -71,10 +71,13 @@
                 <div class="flex items-center">
                     <img src="assects/etc-logo.svg" alt="ETC Logo" class="h-8 sm:h-12 w-auto">
                 </div>
-                <div class="flex items-center space-x-4">
-                    <a href="#testimonials" class="hidden sm:block text-gray-700 hover:text-orange-600 transition duration-300 font-medium text-sm">Testimonials</a>
-                    <button onclick="openContactModal()" class="bg-orange-600 text-white px-4 sm:px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-sm sm:text-base">
-                        Get Quote
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    
+                    <button onclick="openContactModal()" class="bg-orange-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-xs sm:text-sm">
+                        Get a Free Quote
+                    </button>
+                    <button onclick="openContactModal()" class="border border-orange-600 text-orange-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold hover:bg-orange-50 transition duration-300 text-xs sm:text-sm">
+                        Call us Now
                     </button>
                 </div>
             </div>
@@ -109,8 +112,8 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="relative z-10">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">Electrical Testing for Homes & Industries Maximize Safety, Performance & Compliance</h2>
-                    <p class="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">Trusted NABL/ ISO Certified Electrical Testing Partner for Safe & Compliant Operations</p>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">Trusted NABL/ ISO Certified Electrical Testing Partner for Safe & Compliant Operations</h2>
+                    <p class="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">Electrical Testing for Homes & Industries Maximize Safety, Performance & Compliance</p>
                     
                     <!-- Key Benefits Bullet Points -->
                     <div class="mb-6 sm:mb-8">
@@ -143,25 +146,26 @@
                     </div>
                     
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-                        <a href="#services" class="bg-orange-600 text-white px-5 sm:px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition shadow-lg text-sm sm:text-base text-center">View Our Services</a>
-                        <button onclick="openContactModal()" class="border-2 border-orange-600 text-orange-600 px-5 sm:px-6 py-2 rounded-full font-semibold hover:bg-orange-50 transition text-sm sm:text-base text-center cursor-pointer">Let's Connect</button>
+                        <button onclick="openContactModal()" class="bg-orange-600 text-white px-5 sm:px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition shadow-lg text-sm sm:text-base text-center cursor-pointer">Request a Free Audit</button>
+                        <button onclick="openContactModal()" class="border-2 border-orange-600 text-orange-600 px-5 sm:px-6 py-2 rounded-full font-semibold hover:bg-orange-50 transition text-sm sm:text-base text-center cursor-pointer">Book Inspection</button>
                     </div>
+
+                      <!-- Certification Logos -->
+                      <div class="text-left">
+                        <div class="flex justify-center md:justify-start items-center gap-4 sm:gap-6 flex-wrap">
+                           <div class="flex items-center justify-center">
+                               <img src="assects/png-transparent-logo-bureau-of-indian-standards-brand-symbol-indian-architecture-angle-text-triangle-removebg-preview.png" alt="Bureau of Indian Standards" class="h-16 sm:h-18 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity">
+                           </div>
+                           <div class="flex items-center justify-center">
+                               <img src="assects/png-transparent-national-accreditation-board-for-testing-and-calibration-laboratories-regional-reference-standard-laboratory-govt-of-india-times-of-india-logo-emblem-text-logo-removebg-preview.png" alt="NABL Accredited" class="h-16 sm:h-18 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity">
+                           </div>
+                           <div class="flex items-center justify-center">
+                               <img src="assects/iso.png" alt="ISO 14001 Certified" class="h-16 sm:h-18 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity">
+                           </div>
+                       </div>
+                   </div>
                     
-                    <!-- Statistics -->
-                    <div class="grid grid-cols-3 gap-3 sm:gap-6">
-                        <div>
-                            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1" id="years-experience">0+</div>
-                            <div class="text-xs sm:text-sm text-gray-600">Years Experience</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1" id="projects-completed">0+</div>
-                            <div class="text-xs sm:text-sm text-gray-600">Projects Completed</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1" id="happy-clients">0+</div>
-                            <div class="text-xs sm:text-sm text-gray-600">Happy Clients</div>
-                        </div>
-                    </div>
+                   
                 </div>
                 
                 <!-- Right side with image -->
@@ -597,19 +601,13 @@
         
         <div class="max-w-4xl mx-auto relative z-10">
             <div class="text-center mb-6 sm:mb-8">
-                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3">Ready to Power Your Success?</h2>
-                <p class="text-sm sm:text-base text-gray-300 max-w-xl mx-auto">Get professional electrical solutions with instant support and competitive pricing.</p>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3">Ready to Power Your Safety and Compliance?</h2>
+                <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto">Get professional electrical testing with instant support and competitive pricing.</p>
             </div>
 
-            <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <button onclick="openContactModal()" class="group bg-orange-600 text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-orange-700 hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center text-xs sm:text-base cursor-pointer">
-                    <i class="fas fa-phone mr-1 sm:mr-2 group-hover:scale-110 transition-transform"></i>
-                    <span>Call Now</span>
-                </button>
-                
-                <button onclick="openContactModal()" class="group bg-white text-gray-900 px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-gray-100 hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center text-xs sm:text-base cursor-pointer">
-                    <i class="fas fa-envelope mr-1 sm:mr-2 group-hover:scale-110 transition-transform"></i>
-                    <span>Get Quote</span>
+            <div class="flex justify-center mb-6 sm:mb-8">
+                <button onclick="openContactModal()" class="bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-orange-700 hover:shadow-lg transition-all duration-300 text-sm sm:text-base cursor-pointer">
+                    Get Started Now
                 </button>
             </div>
 
