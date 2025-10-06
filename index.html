@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-50">
+<body class="bg-white">
     <style>
         .circuit-pattern {
             position: absolute;
@@ -61,6 +61,29 @@
         .hide-scrollbar {
             -ms-overflow-style: none;  /* For IE and Edge */
             scrollbar-width: none;  /* For Firefox */
+        }
+        
+        /* Dropdown animations */
+        .dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        
+        .dropdown-content.show {
+            max-height: 500px;
+            opacity: 1;
+            transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+        }
+        
+        .dropdown-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dropdown-icon {
+            transition: transform 0.3s ease;
         }
     </style>
 
@@ -188,6 +211,11 @@
     <!-- Logo Scroller Section -->
     <section class="py-6 sm:py-8 mb-4 sm:mb-6 md:mb-8 bg-white border-t border-gray-200 w-full">
         <div class="w-full px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-6">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">Our Happy Clients</h2>
+                <p class="text-sm sm:text-base text-gray-600">Trusted by leading companies across industries</p>
+            </div>
             <div class="logo-scroll-container overflow-hidden">
                 <div class="logo-scroll flex items-center space-x-8">
                     <!-- First set of logos -->
@@ -227,6 +255,11 @@
     <!-- Services Section -->
     <section id="services" class="py-1 sm:py-2 md:py-1 lg:py-2 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-6 sm:mb-8">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">Our Services</h2>
+                <p class="text-sm sm:text-base text-gray-600">Professional electrical testing and maintenance solutions</p>
+            </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
       
             <!-- Visual Card - Left Side -->
@@ -265,7 +298,7 @@
     </section>
 
     <!-- Services Section 2 -->
-    <section id="services2" class="py-0.5 sm:py-1 md:py-0.5 lg:py-1 px-4 sm:px-6 md:px-8 lg:px-12 bg-gray-50">
+    <section id="services2" class="py-0.5 sm:py-1 md:py-0.5 lg:py-1 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
       
@@ -347,7 +380,7 @@
     </section>
 
     <!-- Lighting & Lightning Protection Section -->
-    <section id="lighting-protection" class="py-0.5 sm:py-1 md:py-0.5 lg:py-1 px-4 sm:px-6 md:px-8 lg:px-12 bg-gray-50">
+    <section id="lighting-protection" class="py-0.5 sm:py-1 md:py-0.5 lg:py-1 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
       
@@ -430,7 +463,7 @@
     </section>
 
     <!-- Annual & Capital Overhauling Section -->
-    <section id="overhauling-services" class="py-0.5 sm:py-1 md:py-0.5 lg:py-1 px-4 sm:px-6 md:px-8 lg:px-12 bg-gray-50">
+    <section id="overhauling-services" class="py-0.5 sm:py-1 md:py-0.5 lg:py-1 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
       
@@ -458,6 +491,182 @@
                         <div class="text-sm font-medium">System Overhauling</div>
                         <div class="text-xs opacity-90">Complete system renewal</div>
                       </div>
+                    </div>
+                  </div>
+
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certified Testing & Compliance Section -->
+    <section id="certified-testing" class="py-6 sm:py-8 px-4 sm:px-6 md:px-8 lg:px-12 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+                
+                <!-- Left Side - Content -->
+                <div class="order-2 lg:order-1">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                        Certified Testing & Compliance Made Simple
+                    </h2>
+
+
+                    <!-- Key Benefits -->
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                                <i class="fas fa-check text-orange-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-0.5">NABL & ISO Certified</h3>
+                                <p class="text-sm text-gray-600">Internationally recognized certifications for testing and calibration</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                                <i class="fas fa-check text-orange-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-0.5">48-Hour Report Delivery</h3>
+                                <p class="text-sm text-gray-600">Fast turnaround time for all testing reports</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                                <i class="fas fa-check text-orange-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-0.5">24/7 Technical Support</h3>
+                                <p class="text-sm text-gray-600">Round-the-clock assistance for all your testing needs</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Animated Counters -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-6 pt-4 sm:pt-6">
+                        <!-- Years Experience -->
+                        <div class="text-center sm:text-center lg:text-left">
+                            <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-1 sm:mb-2" id="years-experience">
+                                0+
+                            </div>
+                            <div class="text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-1">Years Experience</div>
+                            <div class="text-xs sm:text-sm text-gray-600">Professional expertise</div>
+                        </div>
+                        
+                        <!-- Projects Completed -->
+                        <div class="text-center sm:text-center lg:text-left">
+                            <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-1 sm:mb-2" id="projects-completed">
+                                0+
+                            </div>
+                            <div class="text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-1">Projects Completed</div>
+                            <div class="text-xs sm:text-sm text-gray-600">Successful deliveries</div>
+                        </div>
+                        
+                        <!-- Happy Clients -->
+                        <div class="text-center sm:text-center lg:text-left">
+                            <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-1 sm:mb-2" id="happy-clients">
+                                0+
+                            </div>
+                            <div class="text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-1">Happy Clients</div>
+                            <div class="text-xs sm:text-sm text-gray-600">Satisfied customers</div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+
+                <!-- Right Side - Dropdown Section -->
+                <div class="order-1 lg:order-2">
+                    <div class="bg-white rounded-xl shadow-lg p-5">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 text-center">Our Testing Services</h3>
+                        
+                        <!-- Dropdown Items -->
+                        <div class="space-y-2">
+                            
+                            <!-- Project & Cost Management -->
+                            <div class="dropdown-item" id="dropdown1">
+                                <button class="dropdown-button w-full text-left flex items-center justify-between p-3 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg hover:from-blue-100 hover:to-blue-200 transition-all duration-300" onclick="toggleDropdown('dropdown1')">
+                                    <span class="font-semibold text-gray-900">Project & Cost Management</span>
+                                    <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="dropdown-content mt-2 ml-4 space-y-1">
+                                    <p class="text-sm text-gray-600">• Project Management Consultancy (PMC)– Building, Solar, Warehouse, Infrastructure</p>
+                                    <p class="text-sm text-gray-600">• Quantity Surveying, Cost Management & Value Engineering</p>
+                                    <p class="text-sm text-gray-600">• Bill Audit & Verification</p>
+                                </div>
+                            </div>
+
+                            <!-- Design & Engineering -->
+                            <div class="dropdown-item" id="dropdown2">
+                                <button class="dropdown-button w-full text-left flex items-center justify-between p-3 bg-gradient-to-r from-green-50 to-green-100 rounded-lg hover:from-green-100 hover:to-green-200 transition-all duration-300" onclick="toggleDropdown('dropdown2')">
+                                    <span class="font-semibold text-gray-900">Design & Engineering</span>
+                                    <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="dropdown-content mt-2 ml-4 space-y-1">
+                                    <p class="text-sm text-gray-600">• Structural Design & Stability Certificates</p>
+                                    <p class="text-sm text-gray-600">• MEP Design (Plumbing, Firefighting, Electrical & HVAC)</p>
+                                    <p class="text-sm text-gray-600">• DPR & Feasibility Reports- Roads, Highways, Water, Hospitals, Buildings, Solar</p>
+                                </div>
+                            </div>
+
+                            <!-- Environmental & Sustainability -->
+                            <div class="dropdown-item" id="dropdown3">
+                                <button class="dropdown-button w-full text-left flex items-center justify-between p-3 bg-gradient-to-r from-orange-50 to-orange-100 rounded-lg hover:from-orange-100 hover:to-orange-200 transition-all duration-300" onclick="toggleDropdown('dropdown3')">
+                                    <span class="font-semibold text-gray-900">Environmental & Sustainability</span>
+                                    <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="dropdown-content mt-2 ml-4 space-y-1">
+                                    <p class="text-sm text-gray-600">• Environmental Studies & Audits</p>
+                                    <p class="text-sm text-gray-600">• Geological & Geophysical Studies</p>
+                                    <p class="text-sm text-gray-600">• Site Investigation & Risk Assessment</p>
+                                    <p class="text-sm text-gray-600">• Sustainability Strategy & Reporting</p>
+                                </div>
+                            </div>
+
+                            <!-- Survey & Mapping -->
+                            <div class="dropdown-item" id="dropdown4">
+                                <button class="dropdown-button w-full text-left flex items-center justify-between p-3 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg hover:from-purple-100 hover:to-purple-200 transition-all duration-300" onclick="toggleDropdown('dropdown4')">
+                                    <span class="font-semibold text-gray-900">Survey & Mapping</span>
+                                    <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="dropdown-content mt-2 ml-4 space-y-1">
+                                    <p class="text-sm text-gray-600">• Digital Land Surveys (TS, GPS, DGPS, LiDAR, Drone, Bathymetric, GPR)</p>
+                                    <p class="text-sm text-gray-600">• Traffic Surveys & Road Safety Audits (ATCC, OD, Axle Load, NSV, FWD)</p>
+                                    <p class="text-sm text-gray-600">• GIS Mapping- Cadastral, Digital, Natural Resources, Urban Planning</p>
+                                </div>
+                            </div>
+
+                            <!-- Geotechnical & Material Testing -->
+                            <div class="dropdown-item" id="dropdown5">
+                                <button class="dropdown-button w-full text-left flex items-center justify-between p-3 bg-gradient-to-r from-red-50 to-red-100 rounded-lg hover:from-red-100 hover:to-red-200 transition-all duration-300" onclick="toggleDropdown('dropdown5')">
+                                    <span class="font-semibold text-gray-900">Geotechnical & Material Testing</span>
+                                    <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="dropdown-content mt-2 ml-4 space-y-1">
+                                    <p class="text-sm text-gray-600">• Geotechnical Investigations (Soil, Rock, Pile Load, Slope Stability, Soil Nailing)</p>
+                                    <p class="text-sm text-gray-600">• Soil & Water Testing, Soil Stabilisation</p>
+                                    <p class="text-sm text-gray-600">• NDT Testing (Civil & Mechanical Structures)</p>
+                                    <p class="text-sm text-gray-600">• Laboratory Testing- Soil, Concrete, Reinforcement, Building Materials, Water</p>
+                                </div>
+                            </div>
+
+                            <!-- Roads, Bridges & Infrastructure Consulting -->
+                            <div class="dropdown-item" id="dropdown6">
+                                <button class="dropdown-button w-full text-left flex items-center justify-between p-3 bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-lg hover:from-indigo-100 hover:to-indigo-200 transition-all duration-300" onclick="toggleDropdown('dropdown6')">
+                                    <span class="font-semibold text-gray-900">Roads, Bridges & Infrastructure Consulting</span>
+                                    <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="dropdown-content mt-2 ml-4 space-y-1">
+                                    <p class="text-sm text-gray-600">• Pavement Investigation Studies</p>
+                                    <p class="text-sm text-gray-600">• Retro-Reflectivity & Safety Testing (RR, NSV, FWD, MBIU)</p>
+                                    <p class="text-sm text-gray-600">• Highway, Bridge & Tunnel DPR Design</p>
+                                    <p class="text-sm text-gray-600">• Pre-Tender & Post-Tender Engineering Support</p>
+                                    <p class="text-sm text-gray-600">• Authority Engineer (AE) & Independent Engineer (IE) Supervision</p>
                     </div>
                   </div>
 
@@ -819,23 +1028,23 @@
             }, 16);
         }
 
-        // Intersection Observer to trigger animation when hero section is visible
-        const observer = new IntersectionObserver((entries) => {
+        // Intersection Observer to trigger animation when certified testing section is visible
+        const certifiedTestingObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     // Start animations with slight delays for better effect
                     setTimeout(() => animateCounter('years-experience', 15), 200);
                     setTimeout(() => animateCounter('projects-completed', 100), 400);
                     setTimeout(() => animateCounter('happy-clients', 50), 600);
-                    observer.unobserve(entry.target);
+                    certifiedTestingObserver.unobserve(entry.target);
                 }
             });
         });
 
-        // Observe the hero section
-        const heroSection = document.querySelector('section');
-        if (heroSection) {
-            observer.observe(heroSection);
+        // Observe the certified testing section
+        const certifiedTestingSection = document.getElementById('certified-testing');
+        if (certifiedTestingSection) {
+            certifiedTestingObserver.observe(certifiedTestingSection);
         }
 
         // Testimonial carousel functionality
@@ -876,6 +1085,24 @@
             currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
             showTestimonial(currentTestimonial);
         }, 5000);
+
+        // Dropdown functionality for Certified Testing section
+        function toggleDropdown(dropdownId) {
+            const content = document.querySelector(`#${dropdownId} .dropdown-content`);
+            const icon = document.querySelector(`#${dropdownId} .dropdown-icon`);
+            
+            if (content && icon) {
+                const isOpen = content.classList.contains('show');
+                
+                if (isOpen) {
+                    content.classList.remove('show');
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.classList.add('show');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            }
+        }
     </script>
 </body>
 </html>
