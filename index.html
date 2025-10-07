@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-50">
+<body class="bg-white">
     <style>
         .circuit-pattern {
             position: absolute;
@@ -62,6 +62,29 @@
             -ms-overflow-style: none;  /* For IE and Edge */
             scrollbar-width: none;  /* For Firefox */
         }
+        
+        /* Dropdown animations */
+        .dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        
+        .dropdown-content.show {
+            max-height: 500px;
+            opacity: 1;
+            transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+        }
+        
+        .dropdown-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dropdown-icon {
+            transition: transform 0.3s ease;
+        }
     </style>
 
     <!-- Navigation -->
@@ -109,9 +132,9 @@
             <div class="absolute bottom-16 left-12 w-40 h-40 bg-gradient-to-tr from-gray-300 to-gray-400 rounded-full opacity-15 blur-md"></div>
             <div class="absolute top-1/2 right-8 w-24 h-24 bg-gradient-to-bl from-yellow-200 to-yellow-300 rounded-full opacity-25 blur-sm"></div>
         </div>
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="relative z-10 pl-4 sm:pl-6 md:pl-8">
+                <div class="relative z-10">
                     <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">Trusted NABL/ ISO Certified Electrical Testing Partner for Safe & Compliant Operations</h2>
                     <p class="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">Electrical Testing for Homes & Industries Maximize Safety, Performance & Compliance</p>
                     
@@ -154,6 +177,7 @@
                       <div class="text-left">
                         <div class="flex justify-center md:justify-start items-center gap-4 sm:gap-6 flex-wrap">
                            <div class="flex items-center justify-center">
+<<<<<<< HEAD
                                <img src="assects/png-transparent-logo-bureau-of-indian-standards-brand-symbol-indian-architecture-angle-text-triangle-removebg-preview.png" alt="Bureau of Indian Standards" class="h-16 sm:h-18 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity" loading="lazy">
                            </div>
                            <div class="flex items-center justify-center">
@@ -161,6 +185,15 @@
                            </div>
                            <div class="flex items-center justify-center">
                                <img src="assects/iso.png" alt="ISO 14001 Certified" class="h-16 sm:h-18 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity" loading="lazy">
+=======
+                               <img src="assects/1.png" alt="Bureau of Indian Standards" class="h-16 sm:h-18 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity">
+                           </div>
+                           <div class="flex items-center justify-center">
+                               <img src="assects/2.png" alt="NABL Accredited" class="h-16 sm:h-18 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity">
+                           </div>
+                           <div class="flex items-center justify-center">
+                               <img src="assects/3.png" alt="ISO 14001 Certified" class="h-16 sm:h-18 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity">
+>>>>>>> e904847ef591b34eaf15737d9388514ba1c72aef
                            </div>
                        </div>
                    </div>
@@ -188,6 +221,11 @@
     <!-- Logo Scroller Section -->
     <section class="py-6 sm:py-8 mb-4 sm:mb-6 md:mb-8 bg-white border-t border-gray-200 w-full">
         <div class="w-full px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-6">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">Our Happy Clients</h2>
+                <p class="text-sm sm:text-base text-gray-600">Trusted by leading companies across industries</p>
+            </div>
             <div class="logo-scroll-container overflow-hidden">
                 <div class="logo-scroll flex items-center space-x-8">
                     <!-- First set of logos -->
@@ -227,6 +265,11 @@
     <!-- Services Section -->
     <section id="services" class="py-1 sm:py-2 md:py-1 lg:py-2 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-6 sm:mb-8">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">Our Services</h2>
+                <p class="text-sm sm:text-base text-gray-600">Professional electrical testing and maintenance solutions</p>
+            </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
       
             <!-- Visual Card - Left Side -->
@@ -249,12 +292,12 @@
               </div>
             </div>
       
-            <!-- Text Content - Right Side -->
-            <div class="flex flex-col justify-center order-1 lg:order-2 text-center lg:text-left px-4 lg:px-8">
-              
-              <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-                Electrical Maintenance Services
-              </h2>
+             <!-- Text Content - Right Side -->
+             <div class="flex flex-col justify-center order-1 lg:order-2 text-left px-4 lg:px-8">
+               
+               <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                 Electrical Maintenance Services
+               </h2>
               <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 We offer complete electrical maintenance services for generators, transformers, motors, batteries, and other electrical systems. Our services include regular inspections, preventive maintenance, testing, repairs, and replacements to ensure optimal performance, reliability, and safety of your equipment. With our expert team, we help minimize downtime, extend equipment life, and keep your operations running smoothly and efficiently.
               </p>
@@ -265,18 +308,18 @@
     </section>
 
     <!-- Services Section 2 -->
-    <section id="services2" class="py-0.5 sm:py-1 md:py-0.5 lg:py-1 px-4 sm:px-6 md:px-8 lg:px-12 bg-gray-50">
+    <section id="services2" class="py-0.5 sm:py-1 md:py-0.5 lg:py-1 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
       
-            <!-- Text Content - Left Side -->
-            <div class="flex flex-col justify-center order-1 lg:order-1 text-center lg:text-left px-4 lg:px-8">
-              
-              <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-                Switch Yard Maintenance
-              </h2>
+             <!-- Text Content - Left Side -->
+             <div class="flex flex-col justify-center order-1 lg:order-1 text-left px-4 lg:px-8">
+               
+               <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                 Energy Audit
+               </h2>
               <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-                We specialize in switchyard maintenance, offering thorough inspection, testing, and servicing to ensure safe, reliable, and efficient power distribution. Our expert team identifies potential issues, performs preventive maintenance, and keeps your switchyard equipment—such as circuit breakers, isolators, busbars, and protection systems—in optimal condition, minimizing downtime and ensuring uninterrupted operations.
+                Our energy audits focus on the core of your electrical systems- from transformers and switchgear to motors and HVAC units. By monitoring load curves, voltage fluctuations, and harmonics, we identify the root causes of losses. This process helps you cut costs, improve equipment life, and align operations with energy management best practices.
 
               </p>
             </div>
@@ -288,7 +331,11 @@
                   <!-- Testing Equipment Image Card -->
                   <div class="rounded-3xl bg-white ">
                     <div class="relative">
+<<<<<<< HEAD
                       <img src="assects/swich yard.jpg" alt="Electrical Testing Equipment" class="w-full h-48 sm:h-56 lg:h-64 object-cover rounded-2xl" loading="lazy">
+=======
+                      <img src="assects/enargy audit.jpg" alt="Electrical Testing Equipment" class="w-full h-48 sm:h-56 lg:h-64 object-cover rounded-2xl">
+>>>>>>> e904847ef591b34eaf15737d9388514ba1c72aef
                       <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
                       <div class="absolute bottom-4 left-4 text-white">
                         <div class="text-sm font-medium">Advanced Testing Equipment</div>
@@ -330,12 +377,12 @@
               </div>
             </div>
 
-            <!-- Text Content - Right Side -->
-            <div class="flex flex-col justify-center order-1 lg:order-2 text-center lg:text-left px-4 lg:px-8">
-              
-              <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-                HT/LT Line Maintenance
-              </h2>
+             <!-- Text Content - Right Side -->
+             <div class="flex flex-col justify-center order-1 lg:order-2 text-left px-4 lg:px-8">
+               
+               <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                 HT/LT Line Maintenance
+               </h2>
               <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 Professional HT/LT line maintenance services, ensuring reliable transmission and distribution of electrical power. Our services include inspection, preventive maintenance, testing, and repair of high-tension and low-tension lines. By addressing potential issues proactively, we enhance system reliability, minimize downtime, and ensure safe and uninterrupted power supply for industrial, commercial, and utility networks.
 
@@ -347,16 +394,16 @@
     </section>
 
     <!-- Lighting & Lightning Protection Section -->
-    <section id="lighting-protection" class="py-0.5 sm:py-1 md:py-0.5 lg:py-1 px-4 sm:px-6 md:px-8 lg:px-12 bg-gray-50">
+    <section id="lighting-protection" class="py-0.5 sm:py-1 md:py-0.5 lg:py-1 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
       
-            <!-- Text Content - Left Side -->
-            <div class="flex flex-col justify-center order-1 lg:order-1 text-center lg:text-left px-4 lg:px-8">
-              
-              <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-                Lighting & Lightning Protection System
-              </h2>
+             <!-- Text Content - Left Side -->
+             <div class="flex flex-col justify-center order-1 lg:order-1 text-left px-4 lg:px-8">
+               
+               <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                 Lighting & Lightning Protection System
+               </h2>
               <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 Complete lighting system solutions along with lightning protection services to safeguard your electrical infrastructure from power surges and storms. Our team handles installation, inspection, and maintenance of lighting and protection systems, ensuring safety, reliability, and uninterrupted operation. With our expert solutions, your facilities remain protected, efficient, and compliant with safety standards.
 
@@ -412,12 +459,12 @@
               </div>
             </div>
       
-            <!-- Text Content - Right Side -->
-            <div class="flex flex-col justify-center order-1 lg:order-2 text-center lg:text-left px-4 lg:px-8">
-              
-              <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-                Township Electrical Maintenance
-              </h2>
+             <!-- Text Content - Right Side -->
+             <div class="flex flex-col justify-center order-1 lg:order-2 text-left px-4 lg:px-8">
+               
+               <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                 Township Electrical Maintenance
+               </h2>
               <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 Our township electrical maintenance services ensure safe and reliable power for residential communities. We handle inspection, preventive maintenance, testing, and repair of all electrical systems and infrastructure. By keeping township power networks efficient and well-maintained, we minimize disruptions, enhance safety, and provide residents with uninterrupted, dependable electricity for everyday living.
 
@@ -430,16 +477,16 @@
     </section>
 
     <!-- Annual & Capital Overhauling Section -->
-    <section id="overhauling-services" class="py-0.5 sm:py-1 md:py-0.5 lg:py-1 px-4 sm:px-6 md:px-8 lg:px-12 bg-gray-50">
+    <section id="overhauling-services" class="py-0.5 sm:py-1 md:py-0.5 lg:py-1 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
       
-            <!-- Text Content - Left Side -->
-            <div class="flex flex-col justify-center order-1 lg:order-1 text-center lg:text-left px-4 lg:px-8">
-              
-              <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-                Annual & Capital Overhauling
-              </h2>
+             <!-- Text Content - Left Side -->
+             <div class="flex flex-col justify-center order-1 lg:order-1 text-left px-4 lg:px-8">
+               
+               <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                 Annual & Capital Overhauling
+               </h2>
               <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 Comprehensive annual maintenance and capital overhauling services for electrical systems and equipment. Our expert team conducts thorough inspections, preventive maintenance, testing, and major refurbishments to maximize performance, enhance reliability, and extend the operational life of your electrical assets. Ensure optimal efficiency and minimize downtime with our professional maintenance solutions.
               </p>
@@ -458,6 +505,162 @@
                         <div class="text-sm font-medium">System Overhauling</div>
                         <div class="text-xs opacity-90">Complete system renewal</div>
                       </div>
+                    </div>
+                  </div>
+
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Energy Audit Section -->
+    <section id="energy-audit" class="py-0.5 sm:py-1 md:py-0.5 lg:py-1 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+      
+            <!-- Visual Card - Left Side -->
+            <div class="flex items-center justify-center order-2 lg:order-1">
+              <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-[30px] bg-gradient-to-b from-blue-50 to-white p-6 sm:p-8 lg:p-12">
+                <div class="space-y-4 sm:space-y-5">
+                  <!-- Energy Audit Image Card -->
+                  <div class="rounded-3xl bg-white ">
+                    <div class="relative">
+                      <img src="assects/swich yard.jpg" alt="Energy Audit Professional" class="w-full h-48 sm:h-56 lg:h-64 object-cover rounded-2xl">
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                      <div class="absolute bottom-4 left-4 text-white">
+                        <div class="text-sm font-medium">Energy Audit Expert</div>
+                        <div class="text-xs opacity-90">Optimizing energy efficiency</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+             <!-- Text Content - Right Side -->
+             <div class="flex flex-col justify-center order-1 lg:order-2 text-left px-4 lg:px-8">
+               
+               <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                 Switch Yard Maintenance
+               </h2>
+              <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+                We specialize in switchyard maintenance, offering thorough inspection, testing, and servicing to ensure safe, reliable, and efficient power distribution. Our expert team identifies potential issues, performs preventive maintenance, and keeps your switchyard equipment—such as circuit breakers, isolators, busbars, and protection systems—in optimal condition, minimizing downtime and ensuring uninterrupted operations.
+              </p>
+            </div>
+
+          </div>
+        </div>
+    </section>
+
+    <!-- Certified Testing & Compliance Section -->
+    <section id="certified-testing" class="py-6 sm:py-8 px-4 sm:px-6 md:px-8 lg:px-12 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+                
+                <!-- Left Side - Content -->
+                <div class="order-1 lg:order-1">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                        Certified Testing & Compliance Made Simple
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed">
+                        We provide comprehensive testing and compliance services with internationally recognized NABL and ISO certifications. Our expert team delivers fast, accurate results with 48-hour report delivery and round-the-clock technical support, ensuring your projects meet all regulatory standards and quality requirements.
+                    </p>
+                    
+                    
+                </div>
+
+                <!-- Right Side - Dropdown Section -->
+                <div class="order-2 lg:order-2">
+                    <div class="bg-white rounded-xl shadow-lg p-5">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 text-center">Our Testing Services</h3>
+                        
+                        <!-- Dropdown Items -->
+                        <div class="space-y-2">
+                            
+                            <!-- Project & Cost Management -->
+                            <div class="dropdown-item" id="dropdown1">
+                                <button class="dropdown-button w-full text-left flex items-center justify-between p-3 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg hover:from-blue-100 hover:to-blue-200 transition-all duration-300" onclick="toggleDropdown('dropdown1')">
+                                    <span class="font-semibold text-gray-900">Project & Cost Management</span>
+                                    <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="dropdown-content mt-2 ml-4 space-y-1">
+                                    <p class="text-sm text-gray-600">• Project Management Consultancy (PMC)– Building, Solar, Warehouse, Infrastructure</p>
+                                    <p class="text-sm text-gray-600">• Quantity Surveying, Cost Management & Value Engineering</p>
+                                    <p class="text-sm text-gray-600">• Bill Audit & Verification</p>
+                                </div>
+                            </div>
+
+                            <!-- Design & Engineering -->
+                            <div class="dropdown-item" id="dropdown2">
+                                <button class="dropdown-button w-full text-left flex items-center justify-between p-3 bg-gradient-to-r from-green-50 to-green-100 rounded-lg hover:from-green-100 hover:to-green-200 transition-all duration-300" onclick="toggleDropdown('dropdown2')">
+                                    <span class="font-semibold text-gray-900">Design & Engineering</span>
+                                    <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="dropdown-content mt-2 ml-4 space-y-1">
+                                    <p class="text-sm text-gray-600">• Structural Design & Stability Certificates</p>
+                                    <p class="text-sm text-gray-600">• MEP Design (Plumbing, Firefighting, Electrical & HVAC)</p>
+                                    <p class="text-sm text-gray-600">• DPR & Feasibility Reports- Roads, Highways, Water, Hospitals, Buildings, Solar</p>
+                                </div>
+                            </div>
+
+                            <!-- Environmental & Sustainability -->
+                            <div class="dropdown-item" id="dropdown3">
+                                <button class="dropdown-button w-full text-left flex items-center justify-between p-3 bg-gradient-to-r from-orange-50 to-orange-100 rounded-lg hover:from-orange-100 hover:to-orange-200 transition-all duration-300" onclick="toggleDropdown('dropdown3')">
+                                    <span class="font-semibold text-gray-900">Environmental & Sustainability</span>
+                                    <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="dropdown-content mt-2 ml-4 space-y-1">
+                                    <p class="text-sm text-gray-600">• Environmental Studies & Audits</p>
+                                    <p class="text-sm text-gray-600">• Geological & Geophysical Studies</p>
+                                    <p class="text-sm text-gray-600">• Site Investigation & Risk Assessment</p>
+                                    <p class="text-sm text-gray-600">• Sustainability Strategy & Reporting</p>
+                                </div>
+                            </div>
+
+                            <!-- Survey & Mapping -->
+                            <div class="dropdown-item" id="dropdown4">
+                                <button class="dropdown-button w-full text-left flex items-center justify-between p-3 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg hover:from-purple-100 hover:to-purple-200 transition-all duration-300" onclick="toggleDropdown('dropdown4')">
+                                    <span class="font-semibold text-gray-900">Survey & Mapping</span>
+                                    <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="dropdown-content mt-2 ml-4 space-y-1">
+                                    <p class="text-sm text-gray-600">• Digital Land Surveys (TS, GPS, DGPS, LiDAR, Drone, Bathymetric, GPR)</p>
+                                    <p class="text-sm text-gray-600">• Traffic Surveys & Road Safety Audits (ATCC, OD, Axle Load, NSV, FWD)</p>
+                                    <p class="text-sm text-gray-600">• GIS Mapping- Cadastral, Digital, Natural Resources, Urban Planning</p>
+                                </div>
+                            </div>
+
+                            <!-- Geotechnical & Material Testing -->
+                            <div class="dropdown-item" id="dropdown5">
+                                <button class="dropdown-button w-full text-left flex items-center justify-between p-3 bg-gradient-to-r from-red-50 to-red-100 rounded-lg hover:from-red-100 hover:to-red-200 transition-all duration-300" onclick="toggleDropdown('dropdown5')">
+                                    <span class="font-semibold text-gray-900">Geotechnical & Material Testing</span>
+                                    <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="dropdown-content mt-2 ml-4 space-y-1">
+                                    <p class="text-sm text-gray-600">• Geotechnical Investigations (Soil, Rock, Pile Load, Slope Stability, Soil Nailing)</p>
+                                    <p class="text-sm text-gray-600">• Soil & Water Testing, Soil Stabilisation</p>
+                                    <p class="text-sm text-gray-600">• NDT Testing (Civil & Mechanical Structures)</p>
+                                    <p class="text-sm text-gray-600">• Laboratory Testing- Soil, Concrete, Reinforcement, Building Materials, Water</p>
+                                </div>
+                            </div>
+
+                            <!-- Roads, Bridges & Infrastructure Consulting -->
+                            <div class="dropdown-item" id="dropdown6">
+                                <button class="dropdown-button w-full text-left flex items-center justify-between p-3 bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-lg hover:from-indigo-100 hover:to-indigo-200 transition-all duration-300" onclick="toggleDropdown('dropdown6')">
+                                    <span class="font-semibold text-gray-900">Roads, Bridges & Infrastructure Consulting</span>
+                                    <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="dropdown-content mt-2 ml-4 space-y-1">
+                                    <p class="text-sm text-gray-600">• Pavement Investigation Studies</p>
+                                    <p class="text-sm text-gray-600">• Retro-Reflectivity & Safety Testing (RR, NSV, FWD, MBIU)</p>
+                                    <p class="text-sm text-gray-600">• Highway, Bridge & Tunnel DPR Design</p>
+                                    <p class="text-sm text-gray-600">• Pre-Tender & Post-Tender Engineering Support</p>
+                                    <p class="text-sm text-gray-600">• Authority Engineer (AE) & Independent Engineer (IE) Supervision</p>
                     </div>
                   </div>
 
@@ -701,6 +904,7 @@
                             <option value="lightning">Lightning Protection</option>
                             <option value="township">Township Electrical</option>
                             <option value="overhauling">Annual Overhauling</option>
+                            <option value="energy-audit">Energy Audit</option>
                             <option value="testing">Testing & Commissioning</option>
                             <option value="other">Other</option>
                         </select>
@@ -819,23 +1023,23 @@
             }, 16);
         }
 
-        // Intersection Observer to trigger animation when hero section is visible
-        const observer = new IntersectionObserver((entries) => {
+        // Intersection Observer to trigger animation when certified testing section is visible
+        const certifiedTestingObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     // Start animations with slight delays for better effect
                     setTimeout(() => animateCounter('years-experience', 15), 200);
                     setTimeout(() => animateCounter('projects-completed', 100), 400);
                     setTimeout(() => animateCounter('happy-clients', 50), 600);
-                    observer.unobserve(entry.target);
+                    certifiedTestingObserver.unobserve(entry.target);
                 }
             });
         });
 
-        // Observe the hero section
-        const heroSection = document.querySelector('section');
-        if (heroSection) {
-            observer.observe(heroSection);
+        // Observe the certified testing section
+        const certifiedTestingSection = document.getElementById('certified-testing');
+        if (certifiedTestingSection) {
+            certifiedTestingObserver.observe(certifiedTestingSection);
         }
 
         // Testimonial carousel functionality
@@ -876,6 +1080,24 @@
             currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
             showTestimonial(currentTestimonial);
         }, 5000);
+
+        // Dropdown functionality for Certified Testing section
+        function toggleDropdown(dropdownId) {
+            const content = document.querySelector(`#${dropdownId} .dropdown-content`);
+            const icon = document.querySelector(`#${dropdownId} .dropdown-icon`);
+            
+            if (content && icon) {
+                const isOpen = content.classList.contains('show');
+                
+                if (isOpen) {
+                    content.classList.remove('show');
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.classList.add('show');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            }
+        }
     </script>
 </body>
 </html>
