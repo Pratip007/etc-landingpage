@@ -857,8 +857,140 @@
                 </div>
                 
                 <!-- Modal Body -->
-                <div class="p-0">
-                    <iframe aria-label='Get Your Free Quote' frameborder="0" style="height:500px;width:100%;border:none;" src='https://forms.zohopublic.in/pratipmaity500gm1/form/enquiryform/formperma/7p_OAsf54IEMESHQ-2pmzF-k24Z3Xsc1B2p7d9FGCAo'></iframe>
+                <div class="p-6 overflow-y-auto max-h-[calc(90vh-80px)] hide-scrollbar">
+                    <form id="enquiryForm" class="space-y-4">
+                        <!-- Success Message -->
+                        <div id="successMessage" class="hidden bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-0.5 mr-3"></i>
+                                <div>
+                                    <p class="font-semibold">Thank you for your enquiry!</p>
+                                    <p class="text-sm">We will get back to you within 24 hours.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Error Message -->
+                        <div id="errorMessage" class="hidden bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+                            <div class="flex items-start">
+                                <i class="fas fa-exclamation-circle text-red-500 mt-0.5 mr-3"></i>
+                                <div>
+                                    <p class="font-semibold">Error submitting form</p>
+                                    <p id="errorText" class="text-sm"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Full Name -->
+                        <div>
+                            <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">
+                                Full Name <span class="text-red-500">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="fullName" 
+                                name="fullName" 
+                                required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                                placeholder="Enter your full name"
+                            >
+                            <p id="fullNameError" class="text-red-500 text-xs mt-1 hidden"></p>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                                Email Address <span class="text-red-500">*</span>
+                            </label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                                placeholder="your.email@example.com"
+                            >
+                            <p id="emailError" class="text-red-500 text-xs mt-1 hidden"></p>
+                        </div>
+
+                        <!-- Phone -->
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                                Phone Number
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                                placeholder="+91 1234567890"
+                            >
+                            <p id="phoneError" class="text-red-500 text-xs mt-1 hidden"></p>
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
+                                Message
+                            </label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="4"
+                                maxlength="1000"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
+                                placeholder="Tell us about your electrical testing requirements..."
+                            ></textarea>
+                            <p class="text-xs text-gray-500 mt-1">Optional (max 1000 characters)</p>
+                            <p id="messageError" class="text-red-500 text-xs mt-1 hidden"></p>
+                        </div>
+
+                        <!-- Math CAPTCHA -->
+                        <div>
+                            <label for="captcha" class="block text-sm font-medium text-gray-700 mb-1">
+                                Security Check <span class="text-red-500">*</span>
+                            </label>
+                            <div class="flex items-center gap-3">
+                                <div class="flex items-center bg-gradient-to-r from-orange-50 to-orange-100 px-4 py-3 rounded-lg border border-orange-200">
+                                    <span id="captchaQuestion" class="font-mono font-semibold text-gray-800 text-lg"></span>
+                                </div>
+                                <span class="text-gray-600 font-semibold">=</span>
+                                <input 
+                                    type="text" 
+                                    id="captcha" 
+                                    name="captcha" 
+                                    required
+                                    autocomplete="off"
+                                    class="w-24 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all text-center font-semibold text-lg"
+                                    placeholder="?"
+                                >
+                                <button 
+                                    type="button" 
+                                    onclick="refreshCaptcha()" 
+                                    class="text-orange-600 hover:text-orange-700 transition-colors"
+                                    title="Refresh captcha"
+                                >
+                                    <i class="fas fa-sync-alt text-lg"></i>
+                                </button>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Solve the math problem to verify you're human</p>
+                            <p id="captchaError" class="text-red-500 text-xs mt-1 hidden"></p>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button 
+                            type="submit" 
+                            id="submitBtn"
+                            class="w-full bg-orange-600 text-white py-3 rounded-lg font-semibold hover:bg-orange-700 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center"
+                        >
+                            <span id="submitBtnText">Submit Enquiry</span>
+                            <i id="submitBtnLoader" class="fas fa-spinner fa-spin ml-2 hidden"></i>
+                        </button>
+
+                        <p class="text-xs text-gray-500 text-center mt-2">
+                            We respect your privacy. Your information will not be shared.
+                        </p>
+                    </form>
                 </div>
             </div>
         </div>
@@ -869,6 +1001,7 @@
         function openContactModal() {
             document.getElementById('contactModal').classList.remove('hidden');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            generateCaptcha(); // Generate fresh captcha when modal opens
         }
 
         function closeContactModal() {
@@ -999,6 +1132,244 @@
                 }
             }
         }
+
+        // Form Validation and Submission
+        // For production: 'https://form-backend-smtp.onrender.com/api'
+        // For local development: 'http://localhost:3000/api'
+        const API_BASE_URL = 'https://form-backend-smtp.onrender.com/api'; // Change this based on your environment
+        
+        // Math CAPTCHA functionality
+        let captchaAnswer = 0;
+        
+        function generateCaptcha() {
+            const num1 = Math.floor(Math.random() * 20) + 1;
+            const num2 = Math.floor(Math.random() * 20) + 1;
+            const operators = ['+', '-', '×'];
+            const operator = operators[Math.floor(Math.random() * operators.length)];
+            
+            let question = `${num1} ${operator} ${num2}`;
+            
+            // Calculate answer
+            switch(operator) {
+                case '+':
+                    captchaAnswer = num1 + num2;
+                    break;
+                case '-':
+                    captchaAnswer = num1 - num2;
+                    break;
+                case '×':
+                    captchaAnswer = num1 * num2;
+                    break;
+            }
+            
+            document.getElementById('captchaQuestion').textContent = question;
+            document.getElementById('captcha').value = '';
+        }
+        
+        function refreshCaptcha() {
+            generateCaptcha();
+            document.getElementById('captchaError').classList.add('hidden');
+        }
+        
+        // Initialize captcha on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            generateCaptcha();
+        });
+        
+        // Helper function to show/hide field errors
+        function showFieldError(fieldId, message) {
+            const errorElement = document.getElementById(`${fieldId}Error`);
+            const inputElement = document.getElementById(fieldId);
+            
+            if (errorElement && inputElement) {
+                errorElement.textContent = message;
+                errorElement.classList.remove('hidden');
+                inputElement.classList.add('border-red-500');
+                inputElement.classList.remove('border-gray-300');
+            }
+        }
+
+        function clearFieldError(fieldId) {
+            const errorElement = document.getElementById(`${fieldId}Error`);
+            const inputElement = document.getElementById(fieldId);
+            
+            if (errorElement && inputElement) {
+                errorElement.textContent = '';
+                errorElement.classList.add('hidden');
+                inputElement.classList.remove('border-red-500');
+                inputElement.classList.add('border-gray-300');
+            }
+        }
+
+        function clearAllErrors() {
+            ['fullName', 'email', 'phone', 'message', 'captcha'].forEach(clearFieldError);
+            document.getElementById('errorMessage').classList.add('hidden');
+            document.getElementById('successMessage').classList.add('hidden');
+        }
+
+        // Validate form fields
+        function validateForm(formData) {
+            let isValid = true;
+            clearAllErrors();
+
+            // Full Name validation
+            const fullName = formData.get('fullName').trim();
+            if (!fullName) {
+                showFieldError('fullName', 'Full name is required');
+                isValid = false;
+            } else if (fullName.length < 2 || fullName.length > 100) {
+                showFieldError('fullName', 'Full name must be between 2 and 100 characters');
+                isValid = false;
+            } else if (!/^[a-zA-Z\s]+$/.test(fullName)) {
+                showFieldError('fullName', 'Full name can only contain letters and spaces');
+                isValid = false;
+            }
+
+            // Email validation
+            const email = formData.get('email').trim();
+            if (!email) {
+                showFieldError('email', 'Email is required');
+                isValid = false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showFieldError('email', 'Please provide a valid email address');
+                isValid = false;
+            }
+
+            // Phone validation (optional)
+            const phone = formData.get('phone').trim();
+            if (phone && !/^[\d\s\-\+\(\)]+$/.test(phone)) {
+                showFieldError('phone', 'Please provide a valid phone number');
+                isValid = false;
+            }
+
+            // Message validation (optional)
+            const message = formData.get('message').trim();
+            if (message && message.length > 1000) {
+                showFieldError('message', 'Message must not exceed 1000 characters');
+                isValid = false;
+            }
+
+            // CAPTCHA validation
+            const captchaInput = formData.get('captcha').trim();
+            if (!captchaInput) {
+                showFieldError('captcha', 'Please solve the math problem');
+                isValid = false;
+            } else if (parseInt(captchaInput) !== captchaAnswer) {
+                showFieldError('captcha', 'Incorrect answer. Please try again.');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Handle form submission
+        document.getElementById('enquiryForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            // Validate form
+            if (!validateForm(formData)) {
+                return;
+            }
+
+            // Prepare data for API
+            const data = {
+                fullName: formData.get('fullName').trim(),
+                email: formData.get('email').trim(),
+                phone: formData.get('phone').trim() || undefined,
+                message: formData.get('message').trim() || undefined
+            };
+
+            // Remove undefined fields
+            Object.keys(data).forEach(key => data[key] === undefined && delete data[key]);
+
+            // Show loading state
+            const submitBtn = document.getElementById('submitBtn');
+            const submitBtnText = document.getElementById('submitBtnText');
+            const submitBtnLoader = document.getElementById('submitBtnLoader');
+            
+            submitBtn.disabled = true;
+            submitBtnText.textContent = 'Submitting...';
+            submitBtnLoader.classList.remove('hidden');
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/enquiry/submit`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    // Show success message
+                    document.getElementById('successMessage').classList.remove('hidden');
+                    document.getElementById('errorMessage').classList.add('hidden');
+                    
+                    // Reset form
+                    this.reset();
+                    clearAllErrors();
+                    generateCaptcha();
+                    
+                    // Auto-close modal after 3 seconds
+                    setTimeout(() => {
+                        closeContactModal();
+                        document.getElementById('successMessage').classList.add('hidden');
+                    }, 3000);
+                } else {
+                    // Show error message
+                    const errorMessage = document.getElementById('errorMessage');
+                    const errorText = document.getElementById('errorText');
+                    
+                    if (result.errors && Array.isArray(result.errors)) {
+                        // Handle validation errors from API
+                        result.errors.forEach(error => {
+                            if (error.field) {
+                                showFieldError(error.field, error.message);
+                            }
+                        });
+                        errorText.textContent = result.message || 'Please check the form fields and try again.';
+                    } else {
+                        errorText.textContent = result.message || 'An error occurred. Please try again.';
+                    }
+                    
+                    errorMessage.classList.remove('hidden');
+                    document.getElementById('successMessage').classList.add('hidden');
+                    
+                    // Generate new CAPTCHA on error
+                    generateCaptcha();
+                }
+            } catch (error) {
+                // Handle network errors
+                const errorMessage = document.getElementById('errorMessage');
+                const errorText = document.getElementById('errorText');
+                
+                errorText.textContent = 'Unable to connect to the server. Please check your internet connection and try again.';
+                errorMessage.classList.remove('hidden');
+                document.getElementById('successMessage').classList.add('hidden');
+                
+                // Generate new CAPTCHA on network error
+                generateCaptcha();
+                
+                console.error('Form submission error:', error);
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtnText.textContent = 'Submit Enquiry';
+                submitBtnLoader.classList.add('hidden');
+            }
+        });
+
+        // Clear errors on input
+        ['fullName', 'email', 'phone', 'message', 'captcha'].forEach(fieldId => {
+            const element = document.getElementById(fieldId);
+            if (element) {
+                element.addEventListener('input', () => clearFieldError(fieldId));
+            }
+        });
     </script>
 </body>
 </html>
