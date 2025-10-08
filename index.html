@@ -99,8 +99,8 @@
                     <button onclick="openContactModal()" class="bg-orange-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-xs sm:text-sm">
                         Get a Free Quote
                     </button>
-                    <a href="tel:+17709643909" class="border border-orange-600 text-orange-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold hover:bg-orange-50 transition duration-300 text-xs sm:text-sm inline-block">
-                        Call us Now
+                    <a href="tel:+917709643909" class="border border-orange-600 text-orange-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold hover:bg-orange-50 transition duration-300 text-xs sm:text-sm inline-block">
+                        (770) 964-3909
                     </a>
                 </div>
             </div>
@@ -857,57 +857,9 @@
                 </div>
                 
                 <!-- Modal Body -->
-                <form id="contactForm" class="p-4 space-y-3">
-                <div>
-                        <label for="popupName" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                        <input type="text" id="popupName" name="name" required 
-                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                               placeholder="Your Name">
-                    </div>
-                    
-                    <div>
-                        <label for="popupEmail" class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-                        <input type="email" id="popupEmail" name="email" required 
-                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                               placeholder="your@email.com">
-                        </div>
-                    
-                        <div>
-                        <label for="popupPhone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-                        <input type="tel" id="popupPhone" name="phone" required 
-                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                               placeholder="+1 (555) 123-4567">
+                <div class="p-4">
+                    <iframe aria-label='Get Your Free Quote' frameborder="0" style="height:500px;width:99%;border:none;" src='https://forms.zohopublic.in/pratipmaity500gm1/form/enquiryform/formperma/7p_OAsf54IEMESHQ-2pmzF-k24Z3Xsc1B2p7d9FGCAo'></iframe>
                 </div>
-                    
-                <div>
-                        <label for="popupService" class="block text-sm font-medium text-gray-700 mb-1">Service Needed</label>
-                        <select id="popupService" name="service" 
-                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
-                            <option value="">Select a service</option>
-                            <option value="maintenance">Electrical Maintenance</option>
-                            <option value="switchyard">Switch Yard Services</option>
-                            <option value="ht-lt">HT/LT Line Maintenance</option>
-                            <option value="lightning">Lightning Protection</option>
-                            <option value="township">Township Electrical</option>
-                            <option value="overhauling">Annual Overhauling</option>
-                            <option value="energy-audit">Energy Audit</option>
-                            <option value="testing">Testing & Commissioning</option>
-                            <option value="other">Other</option>
-                        </select>
-                </div>
-                    
-                    <div>
-                        <label for="popupMessage" class="block text-sm font-medium text-gray-700 mb-1">Project Details</label>
-                        <textarea id="popupMessage" name="message" rows="2" 
-                                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
-                                  placeholder="Tell us about your project requirements..."></textarea>
-                    </div>
-                    
-                    <button type="submit" 
-                            class="w-full bg-orange-600 text-white py-2.5 rounded-lg font-semibold hover:bg-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl">
-                        <i class="fas fa-paper-plane mr-2"></i>Get Free Quote
-                    </button>
-                </form>
             </div>
         </div>
     </div>
@@ -939,43 +891,6 @@
             if (e.key === 'Escape') {
                 closeContactModal();
             }
-        });
-
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = {
-                name: formData.get('name'),
-                phone: formData.get('phone'),
-                email: formData.get('email'),
-                service: formData.get('service'),
-                message: formData.get('message')
-            };
-
-            // Simple form validation
-            if (!data.name || !data.phone || !data.email) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-
-            // Create mailto link with form data
-            const subject = `Quote Request - ${data.service || 'General Inquiry'}`;
-            const body = `Name: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email}\nService: ${data.service || 'Not specified'}\n\nProject Details:\n${data.message || 'No additional details provided'}`;
-            
-            const mailtoLink = `mailto:info@electricalmaintenance.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            alert('Thank you for your inquiry! Your email client will open with the details. We\'ll get back to you within 24 hours.');
-            
-            // Close modal and reset form
-            closeContactModal();
-            this.reset();
         });
 
         // Smooth scrolling for navigation links
